@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>HydrantWiki.DataLibrary</id>
+    <version>$version$</version>
+    <title>Data Access and processing library for HydrantWiki System</title>
+    <authors>Brian Nelson</authors>
+    <owners>Brian Nelson</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides I/O access for the HydrantWiki Website and APIs.</description>
+    <copyright>Copyright 2015</copyright>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="7.0.1"/>
+      <dependency id="mongocsharpdriver" version="1.10.1"/>
+      <dependency id="AWSSDK" version="2.3.52" />
+      <dependency id="TreeGeckoLibraries.Common" />
+      <dependency id="TreeGeckoLibraries.AWS" />
+      <dependency id="TreeGeckoLibraries.Mongo" />
+      <dependency id="TreeGeckoLibraries.Net" />
+      <dependency id="TreeGeckoLibraries.Geospatial" />
+    </dependencies>
+  </metadata>
+</package>

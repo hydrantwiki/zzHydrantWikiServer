@@ -1,0 +1,30 @@
+version: 1.0.{build}
+
+before_build:
+  - git submodule update --init --recursive
+  - nuget restore hwDataLibrary/src/hwDataLibrary.sln
+  - nuget restore src/Site/Site.sln
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "1.0.{build}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true
+  
+cache:
+  - src/Site/packages -> **\packages.config 
+  
+platform: x64
+
+configuration: Debug
+  
+build:
+  project: src/Site/Site.sln
+  publish_wap_xcopy: true 
+  verbosity: Minimal 

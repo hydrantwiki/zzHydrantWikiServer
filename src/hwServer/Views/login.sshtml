@@ -1,0 +1,50 @@
+﻿@Master['loginmaster.sshtml']
+
+@Section['Title']
+Login
+@EndSection
+
+@Section['Head']
+@EndSection
+
+@Section['Content']
+	<form id="loginform" action="javascript:login();">
+		<div class="row">
+			<div class="col-md-3"> 
+				<label for="user">Username</label>
+			</div>
+			<div class="col-md-6">
+				<input type="text" id="txtUsername" name="txtUsername"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label for="password">Password</label>
+			</div>
+			<div class="col-md-6">
+				<input type="password" id="txtPassword" name="txtPassword" />
+			</div>
+		</div>
+		<div class="row">	
+			<div class="col-md-9">
+				<input type="submit" id="btnLogin" class="btn btn-primary" value="Login"/>
+			</div>
+		</div>
+		<div class="row">	
+			<div class="col-md-9">
+				<label id="lblStatus" />
+			</div>
+		</div>
+		<div class="row">	
+			<div class="col-md-9">&nbsp;</div>
+		</div>
+		<div class="row">	
+			<div class="col-md-5">
+				<a href="/reset" class="btn btn-primary">Forgot your password</a>
+			</div>
+			<div class="col-md-4">
+				<a href="/register" class="btn btn-primary">Register</a>
+			</div>
+		</div>
+	</form>
+@EndSection

@@ -1,0 +1,39 @@
+﻿body {
+}
+
+.ui-menu  
+{
+
+}
+
+a { text-decoration: none;}
+
+.app_header 
+{
+   
+}
+
+.app_body 
+{
+    
+}
+
+.tags_table {
+    width: 100%;
+    height: 100%;
+}
+
+.mapRow {
+    min-height: 300px !important;
+    height: 300px;
+}
+
+.mapNearbyHydrants {
+    max-width: 100%;
+    min-height: 300px !Important;
+}
+
+.panoBody {
+    max-width: 100%;
+    height: 300px !Important;
+}

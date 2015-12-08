@@ -1,0 +1,31 @@
+﻿@Master['loginmaster.sshtml']
+
+@Section['Title']
+Reset your password
+@EndSection
+
+@Section['Head']
+@EndSection
+
+@Section['Content']
+	<div id="resetform" >
+		<div class="row">
+			<div class="col-md-3">
+				<label for="user">Email Address</label>
+			</div>
+			<div class="col-md-6">
+				<input type="text" id="txtEmailAddress" name="txtEmailAddress"/>
+			</div>
+		</div>
+		<div class="row">	
+			<div class="col-md-9">
+				<input type="button" id="btnLogin" value="Reset Password" class="btn btn-primary" OnClick="ResetPassword()" />
+			</div>
+		</div>
+		<div class="row">	
+			<div class="col-md-9">
+				<label id="lblStatus" />
+			</div>
+		</div>
+	</div>
+@EndSection
