@@ -634,7 +634,7 @@ namespace HydrantWiki.Library.Managers
 
                     CannedEmailHelper.PopulateEmail(cannedEmail, email, tgso);
 
-                    SESHelper.SendMessage(email);
+                    TreeGecko.Library.Net.Helpers.EmailHelper.SendMessage(email);
                     Persist(email);
 
                     return true;

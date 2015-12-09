@@ -239,19 +239,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="packages.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TagApp\" />
     <Folder Include="Templates\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\hwDataLibrary\src\hwDataLibrary\hwDataLibrary.csproj">
+    <ProjectReference Include="..\hwDataLibrary\hwDataLibrary.csproj">
       <Project>{e2f02884-ce3d-4321-9107-f25c050881b1}</Project>
       <Name>hwDataLibrary</Name>
     </ProjectReference>
