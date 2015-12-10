@@ -35,5 +35,16 @@ namespace HydrantWiki.Library.DAOs
 
             return GetList(query);
         }
+
+        public List<Hydrant> GetHydrants(GeoBox _geoBox, int _quantity)
+        {
+            IMongoQuery query = Query.WithinRectangle("Position",
+                _geoBox.MinLongitude(), _geoBox.MinLatitude(),
+                _geoBox.MaxLongitude(), _geoBox.MaxLatitude());
+
+            MongoCursor cursor = GetCursor(query).SetLimit(_quantity);
+
+            return GetList(cursor);
+        }
     }
 }
