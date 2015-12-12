@@ -28,6 +28,10 @@ namespace HydrantWiki.Mobile.Api.Bootstrapper
             _conventions.StaticContentsConventions.Add(
                 StaticContentConventionBuilder.AddDirectory("images", @"images")
             );
+
+            _conventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddFile("/api.html", "api.html")
+            );
         }
 
         protected override NancyInternalConfiguration InternalConfiguration
