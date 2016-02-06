@@ -16,6 +16,7 @@ using TreeGecko.Library.Common.Helpers;
 using TreeGecko.Library.Geospatial.Helpers;
 using TreeGecko.Library.Geospatial.Objects;
 using TreeGecko.Library.Net.Objects;
+using Tag = HydrantWiki.Library.Objects.Tag;
 using User = HydrantWiki.Library.Objects.User;
 
 namespace HydrantWiki.Mobile.Api.Modules
@@ -85,6 +86,46 @@ namespace HydrantWiki.Mobile.Api.Modules
                 BaseResponse br = HangleGetHydrantsByCenterDistance(_parameters);
                 return Response.AsSuccess(br);
             };
+
+            Get["/api/tags/mine/{page:int}/{pagesize:int}"] = _parameters =>
+            {
+                BaseResponse br = HandleGetMyTags(_parameters);
+                return Response.AsSuccess(br);
+            };
+        }
+
+        private BaseResponse HandleGetMyTags(DynamicDictionary _parameters)
+        {
+            User user;
+            BaseResponse response;
+
+            if (AuthHelper.IsAuthorized(Request, out user))
+            {
+                int page = _parameters["page"];
+                int pageSize = _parameters["pagesize"];
+                
+                HydrantWikiManager hwm = new HydrantWikiManager();
+
+                List<Tag> tags = hwm.GetTagsForUser(user.Guid, page, pageSize);
+                List<Objects.Tag> outputTags = new List<Objects.Tag>();
+
+                foreach (Tag tag in tags)
+                {
+                    Objects.Tag outputTag = new Objects.Tag(tag);
+                    outputTags.Add(outputTag);
+                }
+
+                int count = hwm.GetTagCount(user.Guid);
+                int pages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(count)/Convert.ToDouble(pageSize)));
+
+                response = new TagsResponse(outputTags, page, pageSize, pages, count);
+            }
+            else
+            {
+                response = new BaseResponse { Success = false };
+            }
+
+            return response;
         }
 
         private BaseResponse HangleGetTagCount(DynamicDictionary _parameters)

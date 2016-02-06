@@ -55,6 +55,20 @@ namespace HydrantWiki.Library.DAOs
             return GetList(cursor);
         }
 
+        public List<Tag> GetTagsForUser(Guid _userGuid, int _page, int _pageSize)
+        {
+            int skip = (_page - 1)*_pageSize;
+
+            IMongoQuery query = GetQuery("UserGuid", _userGuid.ToString());
+
+            MongoCursor cursor = GetCursor(query)
+                .SetSortOrder(SortBy.Ascending("DeviceDateTime"))
+                .SetSkip(skip)
+                .SetLimit(_pageSize);
+            
+            return GetList(cursor);
+        }
+
         public Tag GetNextPendingTag()
         {
             IMongoQuery query = GetQuery("Status", TagStatus.Pending);
