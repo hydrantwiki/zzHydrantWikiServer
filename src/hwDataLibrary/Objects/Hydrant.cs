@@ -53,14 +53,14 @@ namespace HydrantWiki.Library.Objects
         /// 
         /// </summary>
         public Properties Properties { get; set; }
-		
-		/// <summary>
-		/// Gets or sets the creation date time (Time the record was added to the system)
-		/// </summary>
-		/// <value>
-		/// The creation date time.
-		/// </value>
-		public DateTime CreationDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the creation date time (Time the record was added to the system)
+        /// </summary>
+        /// <value>
+        /// The creation date time.
+        /// </value>
+        public DateTime CreationDateTime { get; set; }
 
         /// <summary>
         /// 
@@ -97,7 +97,7 @@ namespace HydrantWiki.Library.Objects
             obj.Add("OriginalTagUserGuid", OriginalTagUserGuid);
             obj.Add("OriginalTagDateTime", OriginalTagDateTime);
             obj.Add("CreationDateTime", CreationDateTime);
-			obj.Add("OriginalReviewerUserGuid", OriginalReviewerUserGuid);
+            obj.Add("OriginalReviewerUserGuid", OriginalReviewerUserGuid);
             obj.Add("LastReviewerUserGuid", LastReviewerUserGuid);
             obj.Add("Properties", Properties.ToString());
             
