@@ -69,19 +69,19 @@ namespace HydrantWiki.Mobile.Api.Modules
                 return Response.AsSuccess(br);
             };
 
-            Get["/api/hydrants/box/{east:double}/{west:double}/{north:double}/{south:double}"] = _parameters =>
+            Get["/api/hydrants/box/{east:decimal}/{west:decimal}/{north:decimal}/{south:decimal}"] = _parameters =>
             {
                 BaseResponse br = HangleGetHydrantsByGeobox(_parameters);
                 return Response.AsSuccess(br);
             };
 
-            Get["/api/hydrants/box/{east:double}/{west:double}/{north:double}/{south:double}/{quantity:int}"] = _parameters =>
+            Get["/api/hydrants/box/{east:decimal}/{west:decimal}/{north:decimal}/{south:decimal}/{quantity:int}"] = _parameters =>
             {
                 BaseResponse br = HangleGetHydrantsByGeobox(_parameters);
                 return Response.AsSuccess(br);
             };
 
-            Get["/api/hydrants/{latitude:double}/{longitude:double}/{distance:double}"] = _parameters =>
+            Get["/api/hydrants/circle/{latitude:decimal}/{longitude:decimal}/{distance:decimal}"] = _parameters =>
             {
                 BaseResponse br = HangleGetHydrantsByCenterDistance(_parameters);
                 return Response.AsSuccess(br);
