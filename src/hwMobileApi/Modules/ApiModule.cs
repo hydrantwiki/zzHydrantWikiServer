@@ -122,7 +122,12 @@ namespace HydrantWiki.Mobile.Api.Modules
             }
             else
             {
-                response = new BaseResponse { Success = false };
+                response = new BaseResponse
+                {
+                    Success = false,
+                    Error = "Unauthorized",
+                    Message = "Reauthenticate"
+                };
             }
 
             return response;
@@ -142,7 +147,12 @@ namespace HydrantWiki.Mobile.Api.Modules
             }
             else
             {
-                response = new BaseResponse {Success = false};
+                response = new BaseResponse
+                {
+                    Success = false,
+                    Error = "Unauthorized",
+                    Message = "Reauthenticate"
+                };
             }
 
             return response;
@@ -162,7 +172,12 @@ namespace HydrantWiki.Mobile.Api.Modules
             }
             else
             {
-                response = new BaseResponse {Success = false};
+                response = new BaseResponse
+                {
+                    Success = false,
+                    Error = "Unauthorized",
+                    Message = "Reauthenticate"
+                };
             }
 
             return response;
@@ -244,6 +259,11 @@ namespace HydrantWiki.Mobile.Api.Modules
                     }
                 }
             }
+            else
+            {
+                response.Error = "Unauthorized";
+                response.Message = "Reauthenticate";
+            }
 
             return response;
         }
@@ -302,6 +322,11 @@ namespace HydrantWiki.Mobile.Api.Modules
                         }
                     }
                 }
+            }
+            else
+            {
+                response.Error = "Unauthorized";
+                response.Message = "Reauthenticate";
             }
 
             return response;

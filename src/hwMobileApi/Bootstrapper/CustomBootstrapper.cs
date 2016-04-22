@@ -19,6 +19,7 @@ namespace HydrantWiki.Mobile.Api.Bootstrapper
         {
             CookieBasedSessions.Enable(_pipelines);
             Nancy.Security.Csrf.Enable(_pipelines);
+
         }
         
         protected override void ConfigureConventions(NancyConventions _conventions)
