@@ -10,7 +10,7 @@ namespace HydrantWiki.Mobile.Api.Bootstrapper
 {
     public class CustomBoostrapper : DefaultNancyBootstrapper
     {
-        protected override void ConfigureRequestContainer(TinyIoCContainer _container, Nancy.NancyContext _context)
+        protected override void ConfigureRequestContainer(TinyIoCContainer _container, NancyContext _context)
         {
             base.ConfigureRequestContainer(_container, _context);
         }
@@ -40,7 +40,7 @@ namespace HydrantWiki.Mobile.Api.Bootstrapper
             get
             {
                 return NancyInternalConfiguration.WithOverrides(
-                    builder => builder.StatusCodeHandlers = new List<Type>());
+                    _builder => _builder.StatusCodeHandlers = new List<Type>());
             }
         }
     }
